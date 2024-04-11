@@ -13,6 +13,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* position: relative; */
 }
 
 .TO-DO-app {
@@ -21,6 +22,7 @@
   height: 50%;
   border-radius: 20px;
   box-shadow: -20px -20px 10px rgb(71, 67, 67);
+  
 }
 .heading {
   display: flex;
@@ -66,4 +68,51 @@ button{
      cursor: pointer;
      font-size: 15px;
 
+
+}
+
+ul li{
+margin-left: 25px;
+padding:12px 8px 12px 50px;
+font-size:15px;
+cursor: pointer;
+user-select: none;
+list-style: none;
+position: relative;
+}
+
+ul li::before{
+  content: "";
+  position: absolute;
+  top:12px;
+  left:15px;
+  height:20px;
+  width:20px;
+  border-radius: 50%;
+  background-image: url(./images/To-Do-Img/images/unchecked.png);
+  background-size: cover;
+  background-position: center;
+}
+ul li.checked{
+  text-decoration: line-through;
+  /* opacity: 80%; */
+  
+}
+ul li.checked::before{
+  background-image: url(./images/To-Do-Img/images/checked.png) ;
+  color:#f75d05;
+}
+ul li span{
+  position:  absolute;
+  right:10px;
+  top:5px;
+  color:#f75d05;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+}
+ul li span:hover{
+  background: #edeef0;
 }
